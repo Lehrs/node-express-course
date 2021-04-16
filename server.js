@@ -1,5 +1,16 @@
 const express = require('express');
 const app = express();
-app.listen(8000,function(){
-    console.log("server is runnung")
+
+const mockUserData=[
+    {name: 'Mark'},
+    {name: 'Jill'}
+]
+app.get('/users',function(req,res){
+    res.json({
+        sucess: true,
+        message: 'successfully got users. Nice!',
+        users: MockUserdata
+    })
 })
+
+app.listen(8000,function(){console.log("server is runnung")})
